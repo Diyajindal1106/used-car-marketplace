@@ -1,176 +1,57 @@
+.cars-page{
+    background:#0b0b0b;
+    min-height:100vh;
+    padding:120px 7%;
+}
+
+.cars-container{
+    max-width:1400px;
+    margin:auto;
+}
+
+.cars-heading{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.cars-heading h1{
+    color:white;
+    font-size:56px;
+}
+
+.cars-heading p{
+    color:#999;
+    margin-top:10px;
+}
+
 .cars-grid{
-    display:flex;
-    flex-direction:column;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+
     gap:28px;
+
+    
+
 }
 
-.listing-card{
+.cars-grid{
 
-    display:flex;
+    display:grid;
 
-    background:#181818;
+    grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
 
-    border-radius:22px;
+    gap:25px;
 
-    overflow:hidden;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    transition:.35s;
-
-    cursor:pointer;
 }
 
-.listing-card:hover{
+@media(max-width:992px){
 
-    border-color:#D4AF37;
+    .cars-layout{
 
-    transform:translateY(-5px);
+        grid-template-columns:1fr;
 
-    box-shadow:0 20px 40px rgba(0,0,0,.35);
-}
+    }
 
-.listing-card img{
-
-    width:340px;
-
-    height:240px;
-
-    object-fit:cover;
-
-    transition:.5s;
-}
-
-.listing-card:hover img{
-
-    transform:scale(1.05);
-}
-
-.listing-content{
-
-    flex:1;
-
-    padding:28px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:space-between;
-}
-
-.listing-top{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:flex-start;
-}
-
-.listing-top h2{
-
-    color:white;
-
-    font-size:30px;
-
-    margin-bottom:10px;
-}
-
-.price{
-
-    color:#D4AF37;
-
-    font-size:24px;
-
-    font-weight:600;
-}
-
-.wishlist-btn{
-
-    width:48px;
-
-    height:48px;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:#252525;
-
-    color:white;
-
-    cursor:pointer;
-
-    font-size:20px;
-
-    transition:.3s;
-}
-
-.wishlist-btn:hover{
-
-    color:#ff4d6d;
-
-    transform:scale(1.1);
-}
-
-.specs{
-
-    display:flex;
-
-    gap:18px;
-
-    flex-wrap:wrap;
-
-    margin:24px 0;
-}
-
-.specs span{
-
-    background:#252525;
-
-    color:#ddd;
-
-    padding:10px 16px;
-
-    border-radius:50px;
-
-    font-size:14px;
-}
-
-.location{
-
-    color:#bdbdbd;
-
-    margin-bottom:24px;
-}
-
-.details-btn{
-
-    width:220px;
-
-    height:54px;
-
-    border:none;
-
-    border-radius:50px;
-
-    background:#D4AF37;
-
-    color:#111;
-
-    font-size:16px;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:.3s;
-}
-
-.details-btn:hover{
-
-    background:white;
-
-    transform:translateY(-3px);
 }

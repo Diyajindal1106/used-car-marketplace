@@ -1,0 +1,75 @@
+.filter-bar{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:18px;
+
+    margin-bottom:40px;
+
+}
+
+.filter-bar select{
+
+    background:#171717;
+
+    color:#fff;
+
+    border:1px solid #2c2c2c;
+
+    padding:15px 18px;
+
+    border-radius:14px;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.filter-bar select:hover{
+
+    border-color:#D4AF37;
+
+}
+
+.filter-bar select:focus{
+
+    outline:none;
+
+    border-color:#D4AF37;
+
+    box-shadow:0 0 15px rgba(212,175,55,.15);
+
+}
+
+.filter-bar option{
+
+    background:#171717;
+
+    color:white;
+
+}
+
+@media(max-width:900px){
+
+    .filter-bar{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .filter-bar{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
