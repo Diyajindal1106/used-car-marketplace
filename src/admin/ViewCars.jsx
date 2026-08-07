@@ -1,94 +1,160 @@
 import "./ViewCars.css";
 import { Link } from "react-router-dom";
-import carsData from "../data/CarsData";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function ViewCars() {
 
+    const [cars, setCars] = useState([]);
+
+    useEffect(() => {
+
+        fetchCars();
+
+    }, []);
+
+    const fetchCars = async () => {
+
+        try {
+
+            const { data } = await axios.get(
+                "http://localhost:5000/api/cars"
+            );
+
+            setCars(data);
+
+        }
+
+        catch (error) {
+
+            console.log(error);
+
+        }
+
+    };
+
+    const deleteCar = async (id) => {
+
+        const confirmDelete = window.confirm(
+            "Are you sure you want to delete this car?"
+        );
+
+        if (!confirmDelete) return;
+
+        try {
+
+            await axios.delete(
+                `http://localhost:5000/api/cars/${id}`
+            );
+
+            alert("Car Deleted Successfully!");
+
+            fetchCars();
+
+        }
+
+        catch (error) {
+
+            console.log(error);
+
+            alert("Failed to Delete Car");
+
+        }
+
+    };
+
     return (
 
-        <section className="view-cars">
+        
 
-            <h1>Manage Cars</h1>
+    <section className="view-cars">
 
-            <table>
+        <h1>Manage Cars</h1>
 
-                <thead>
+        <div className="view-cars-container">
 
-                    <tr>
+            {
 
-                        <th>Image</th>
+                cars.map((car)=>(
 
-                        <th>Company</th>
+                    <div
+                        key={car._id}
+                        className="car-card"
+                    >
 
-                        <th>Model</th>
+                        <div className="car-image">
 
-                        <th>Price</th>
+                        <img
+                            src={car.image}
+                            alt={car.model}
+                        />
 
-                        <th>Fuel</th>
+                        <span className="category-badge">
+                            {car.category}
+                        </span>
+                        </div>
 
-                        <th>Actions</th>
+                        <div className="car-info">
 
-                    </tr>
+                            <h2>
 
-                </thead>
+                                {car.company} {car.model}
 
-                <tbody>
+                            </h2>
 
-                    {
+                            <p>
 
-                        carsData.map((car)=>(
+                                📍 {car.location}
 
-                            <tr key={car.id}>
+                            </p>
 
-                                <td>
+                            <p>
 
-                                    <img
-                                        src={car.image}
-                                        alt={car.model}
-                                    />
+                                ⛽ {car.fuel}
 
-                                </td>
+                            </p>
 
-                                <td>{car.company}</td>
+                            <h3>
 
-                                <td>{car.model}</td>
+                                {car.price}
 
-                                <td>{car.price}</td>
+                            </h3>
 
-                                <td>{car.fuel}</td>
+                        </div>
 
-                                <td>
+                        <div className="car-actions">
 
-                                    <Link
-                                        className="edit-btn"
-                                        to={`/admin/edit/${car.id}`}
-                                    >
+                            <Link
+                                to={`/admin/edit/${car._id}`}
+                                className="edit-btn"
+                            >
 
-                                        Edit
+                                Edit
 
-                                    </Link>
+                            </Link>
 
-                                    <button
-                                        className="delete-btn"
-                                    >
+                            <button
+                                className="delete-btn"
+                                onClick={() => deleteCar(car._id)}
+                            >
 
-                                        Delete
+                                Delete
 
-                                    </button>
+                            </button>
 
-                                </td>
+                        </div>
 
-                            </tr>
+                    </div>
 
-                        ))
+                ))
 
-                    }
+            }
 
-                </tbody>
+        </div>
 
-            </table>
+    </section>
 
-        </section>
+
 
     );
 

@@ -138,29 +138,25 @@ function Cars() {
 
                 </div>
 
-                <SearchBar
+                <div className="search-filter-section">
 
-                    search={search}
+    <SearchBar
+        search={search}
+        setSearch={setSearch}
+    />
 
-                    setSearch={setSearch}
+    <FilterBar
+        category={category}
+        setCategory={setCategory}
+        fuel={fuel}
+        setFuel={setFuel}
+        price={price}
+        setPrice={setPrice}
+        sort={sort}
+        setSort={setSort}
+    />
 
-                />
-
-                <FilterBar
-
-                    category={category}
-                    setCategory={setCategory}
-
-                    fuel={fuel}
-                    setFuel={setFuel}
-
-                    price={price}
-                    setPrice={setPrice}
-
-                    sort={sort}
-                    setSort={setSort}
-
-                />
+</div>
 
                 <div className="cars-grid">
 

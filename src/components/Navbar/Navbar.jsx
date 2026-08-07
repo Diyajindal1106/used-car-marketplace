@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 function Navbar() {
 
     const [openMenu, setOpenMenu] = useState(false);
+    const [openLogin, setOpenLogin] = useState(false);
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
@@ -38,7 +39,7 @@ function Navbar() {
                     Drive<span>Luxe</span>
                 </Link>
 
-                <div className="user-icon">
+                <div className="user-icon" onClick={() => setOpenLogin(true)}>
                     <FiUser />
                 </div>
 
@@ -85,8 +86,56 @@ function Navbar() {
                 <div
                     className="backdrop"
                     onClick={() => setOpenMenu(false)}
-                ></div>
+                >
+
+                </div>
             )}
+
+            {openLogin && (
+
+    <div
+        className="login-overlay"
+        onClick={() => setOpenLogin(false)}
+    >
+
+        <div
+            className="login-modal"
+            onClick={(e) => e.stopPropagation()}
+        >
+
+            <h2>Welcome to DriveLuxe</h2>
+
+            <p>Select your access type</p>
+
+            <Link
+                to="/user-login"
+                className="login-card"
+                onClick={() => setOpenLogin(false)}
+            >
+
+                <h3>👤 Continue as User</h3>
+
+                <span>Explore Marketplace</span>
+
+            </Link>
+
+            <Link
+                to="/admin-login"
+                className="login-card"
+                onClick={() => setOpenLogin(false)}
+                >
+
+                <h3>🛡️ Continue as Administrator</h3>
+
+                <span>Manage Marketplace</span>
+
+            </Link>
+
+        </div>
+
+    </div>
+
+)}
 
         </>
 

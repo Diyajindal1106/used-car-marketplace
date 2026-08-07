@@ -46,6 +46,18 @@
 
 }
 
+.search-filter-section{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:30px;
+
+    margin-bottom:50px;
+
+}
+
 @media(max-width:992px){
 
     .cars-layout{

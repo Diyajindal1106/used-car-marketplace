@@ -1,103 +1,189 @@
-.dashboard{
+.admin-layout{
+
+    display:flex;
+
+    background:#0d0d0d;
 
     min-height:100vh;
 
-    background:#0b0b0b;
+}
 
-    padding:120px 7%;
+.dashboard-content{
+
+    flex:1;
+
+    margin-left:260px;
+
+    padding:40px;
 
 }
 
-.dashboard h1{
+.dashboard-header{
 
-    color:white;
-
-    font-size:46px;
-
-    margin-bottom:45px;
+    margin-bottom:40px;
 
 }
 
-.stats{
+.dashboard-header h1{
+
+    color:#fff;
+
+    font-size:38px;
+
+    margin-bottom:10px;
+
+}
+
+.dashboard-header p{
+
+    color:#9f9f9f;
+
+    font-size:16px;
+
+}
+
+.dashboard-cards{
 
     display:grid;
 
     grid-template-columns:repeat(3,1fr);
 
-    gap:30px;
+    gap:25px;
+
+    margin-bottom:45px;
 
 }
 
-.card{
+.dashboard-card{
 
     background:#171717;
 
-    border:1px solid #2d2d2d;
+    border:1px solid #2c2c2c;
 
     border-radius:18px;
 
-    padding:35px;
-
-    text-align:center;
-
-    transition:.3s;
-
-}
-
-.card:hover{
-
-    border-color:#D4AF37;
-
-}
-
-.card svg{
-
-    font-size:45px;
-
-    color:#D4AF37;
-
-    margin-bottom:20px;
-
-}
-
-.card h2{
-
-    color:white;
-
-    font-size:34px;
-
-}
-
-.card p{
-
-    color:#aaa;
-
-    margin-top:10px;
-
-}
-
-.actions{
-
-    margin-top:60px;
-
-    display:flex;
-
-    gap:20px;
-
-}
-
-.actions a{
+    padding:30px;
 
     text-decoration:none;
 
-    background:#D4AF37;
+    color:white;
 
-    color:#111;
+    transition:.35s;
 
-    padding:15px 35px;
+}
 
-    border-radius:50px;
+.dashboard-card:hover{
 
-    font-weight:600;
+    transform:translateY(-8px);
+
+    border-color:#D4AF37;
+
+    box-shadow:0 15px 35px rgba(212,175,55,.15);
+
+}
+
+.dashboard-card svg{
+
+    font-size:42px;
+
+    color:#D4AF37;
+
+    margin-bottom:18px;
+
+}
+
+.dashboard-card h2{
+
+    font-size:30px;
+
+    margin-bottom:10px;
+
+}
+
+.dashboard-card span{
+
+    color:#b8b8b8;
+
+}
+
+.recent-section{
+
+    background:#171717;
+
+    border:1px solid #2c2c2c;
+
+    border-radius:18px;
+
+    padding:25px;
+
+}
+
+.recent-section h2{
+
+    color:white;
+
+    margin-bottom:25px;
+
+}
+
+.recent-car{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    padding:15px 0;
+
+    border-bottom:1px solid #2a2a2a;
+
+}
+
+.recent-car:last-child{
+
+    border-bottom:none;
+
+}
+
+.recent-car img{
+
+    width:80px;
+
+    height:60px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+
+}
+
+.recent-car div{
+
+    flex:1;
+
+    margin-left:20px;
+
+}
+
+.recent-car h3{
+
+    color:white;
+
+    margin-bottom:6px;
+
+}
+
+.recent-car p{
+
+    color:#9a9a9a;
+
+}
+
+.recent-car strong{
+
+    color:#D4AF37;
+
+    font-size:18px;
 
 }
