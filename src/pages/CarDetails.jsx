@@ -1,15 +1,66 @@
 import "./CarDetails.css";
+import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
+import axios from "axios";
+
 import { FiMapPin, FiCalendar, FiSettings } from "react-icons/fi";
 import { BsFuelPump } from "react-icons/bs";
-
-import carsData from "../data/CarsData";
 
 function CarDetails() {
 
     const { id } = useParams();
 
-    const car = carsData.find((item) => item.id === Number(id));
+    const [car, setCar] = useState(null);
+
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+
+        const fetchCar = async () => {
+
+            try {
+
+                const { data } = await axios.get(
+
+                    `http://localhost:5000/api/cars/${id}`
+
+                );
+
+                setCar(data);
+
+            }
+
+            catch (error) {
+
+                console.log(error);
+
+            }
+
+            finally {
+
+                setLoading(false);
+
+            }
+
+        };
+
+        fetchCar();
+
+    }, [id]);
+
+    if (loading) {
+
+        return (
+
+            <div className="car-not-found">
+
+                <h2>Loading...</h2>
+
+            </div>
+
+        );
+
+    }
 
     if (!car) {
 
@@ -20,7 +71,9 @@ function CarDetails() {
                 <h2>Car Not Found</h2>
 
                 <Link to="/cars">
+
                     Back to Cars
+
                 </Link>
 
             </div>
@@ -104,18 +157,11 @@ function CarDetails() {
 
                     <div className="description">
 
-                        <h3>
-
-                            Description
-
-                        </h3>
+                        <h3>Description</h3>
 
                         <p>
 
-                            This vehicle is well maintained and thoroughly inspected.
-                            It comes with genuine documents, smooth engine performance,
-                            excellent mileage and premium condition. Perfect for daily
-                            city driving as well as long highway trips.
+                            {car.description}
 
                         </p>
 

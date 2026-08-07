@@ -46,7 +46,7 @@ function CarCard({ car }) {
 
                 <button
                     className="details-btn"
-                    onClick={() => navigate(`/cars/${car.id}`)}
+                    onClick={() => navigate(`/cars/${car._id}`)}
                 >
                     View Details →
                 </button>

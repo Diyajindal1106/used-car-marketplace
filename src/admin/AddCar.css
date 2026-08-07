@@ -1,0 +1,73 @@
+.add-car{
+
+    min-height:100vh;
+
+    background:#0b0b0b;
+
+    padding:120px 7%;
+
+}
+
+.add-car h1{
+
+    color:white;
+
+    margin-bottom:40px;
+
+    font-size:42px;
+
+}
+
+.add-form{
+
+    max-width:700px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.add-form input,
+.add-form textarea{
+
+    padding:16px;
+
+    background:#171717;
+
+    border:1px solid #333;
+
+    border-radius:12px;
+
+    color:white;
+
+    outline:none;
+
+}
+
+.add-form input:focus,
+.add-form textarea:focus{
+
+    border-color:#D4AF37;
+
+}
+
+.add-form button{
+
+    background:#D4AF37;
+
+    border:none;
+
+    padding:16px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+    font-weight:600;
+
+}

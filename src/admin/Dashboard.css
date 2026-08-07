@@ -1,0 +1,103 @@
+.dashboard{
+
+    min-height:100vh;
+
+    background:#0b0b0b;
+
+    padding:120px 7%;
+
+}
+
+.dashboard h1{
+
+    color:white;
+
+    font-size:46px;
+
+    margin-bottom:45px;
+
+}
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+}
+
+.card{
+
+    background:#171717;
+
+    border:1px solid #2d2d2d;
+
+    border-radius:18px;
+
+    padding:35px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    border-color:#D4AF37;
+
+}
+
+.card svg{
+
+    font-size:45px;
+
+    color:#D4AF37;
+
+    margin-bottom:20px;
+
+}
+
+.card h2{
+
+    color:white;
+
+    font-size:34px;
+
+}
+
+.card p{
+
+    color:#aaa;
+
+    margin-top:10px;
+
+}
+
+.actions{
+
+    margin-top:60px;
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.actions a{
+
+    text-decoration:none;
+
+    background:#D4AF37;
+
+    color:#111;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+}

@@ -1,0 +1,101 @@
+.view-cars{
+
+    min-height:100vh;
+
+    background:#0b0b0b;
+
+    padding:120px 7%;
+
+}
+
+.view-cars h1{
+
+    color:white;
+
+    margin-bottom:40px;
+
+    font-size:42px;
+
+}
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    background:#171717;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+}
+
+th{
+
+    background:#D4AF37;
+
+    color:#111;
+
+    padding:18px;
+
+}
+
+td{
+
+    padding:16px;
+
+    text-align:center;
+
+    color:white;
+
+    border-bottom:1px solid #2a2a2a;
+
+}
+
+td img{
+
+    width:90px;
+
+    height:60px;
+
+    object-fit:cover;
+
+    border-radius:8px;
+
+}
+
+.edit-btn{
+
+    background:#D4AF37;
+
+    color:#111;
+
+    padding:8px 18px;
+
+    border-radius:8px;
+
+    text-decoration:none;
+
+    margin-right:10px;
+
+    font-weight:600;
+
+}
+
+.delete-btn{
+
+    background:#ff3b30;
+
+    color:white;
+
+    border:none;
+
+    padding:8px 18px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}

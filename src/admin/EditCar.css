@@ -1,0 +1,75 @@
+.edit-car{
+
+    min-height:100vh;
+
+    background:#0b0b0b;
+
+    padding:120px 7%;
+
+}
+
+.edit-car h1{
+
+    color:white;
+
+    font-size:42px;
+
+    margin-bottom:40px;
+
+}
+
+.edit-form{
+
+    max-width:700px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.edit-form input,
+.edit-form textarea{
+
+    padding:16px;
+
+    background:#171717;
+
+    border:1px solid #333;
+
+    color:white;
+
+    border-radius:12px;
+
+    outline:none;
+
+}
+
+.edit-form input:focus,
+.edit-form textarea:focus{
+
+    border-color:#D4AF37;
+
+}
+
+.edit-form button{
+
+    background:#D4AF37;
+
+    color:#111;
+
+    border:none;
+
+    padding:16px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+}

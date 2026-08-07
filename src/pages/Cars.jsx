@@ -1,13 +1,14 @@
 import "./Cars.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 import SearchBar from "../components/SearchBar/SearchBar";
 import FilterBar from "../components/FilterBar/FilterBar";
 import CarCard from "../components/CarCard/CarCard";
 
-import CarsData from "../data/CarsData";
-
 function Cars() {
+
+    const [cars, setCars] = useState([]);
 
     const [search, setSearch] = useState("");
 
@@ -19,9 +20,31 @@ function Cars() {
 
     const [sort, setSort] = useState("Default");
 
+    useEffect(() => {
 
+        const fetchCars = async () => {
 
-    const filteredCars = CarsData
+            try {
+
+                const { data } = await axios.get("http://localhost:5000/api/cars");
+
+                setCars(data);
+
+            }
+
+            catch (error) {
+
+                console.log(error);
+
+            }
+
+        };
+
+        fetchCars();
+
+    }, []);
+
+    const filteredCars = cars
 
         // Search
         .filter((car) => {
@@ -63,7 +86,8 @@ function Cars() {
 
             if (price === "5L-10L")
 
-                return car.amount >= 500000 && car.amount <= 1000000;
+                return car.amount >= 500000 &&
+                    car.amount <= 1000000;
 
             if (price === "Above 10L")
 
@@ -92,9 +116,6 @@ function Cars() {
 
         });
 
-
-
-
     return (
 
         <section className="cars-page">
@@ -117,8 +138,6 @@ function Cars() {
 
                 </div>
 
-
-
                 <SearchBar
 
                     search={search}
@@ -126,8 +145,6 @@ function Cars() {
                     setSearch={setSearch}
 
                 />
-
-
 
                 <FilterBar
 
@@ -145,23 +162,33 @@ function Cars() {
 
                 />
 
-
-
                 <div className="cars-grid">
 
                     {
 
-                        filteredCars.map((car) => (
+                        filteredCars.length > 0 ? (
 
-                            <CarCard
+                            filteredCars.map((car) => (
 
-                                key={car.id}
+                                <CarCard
 
-                                car={car}
+                                    key={car._id}
 
-                            />
+                                    car={car}
 
-                        ))
+                                />
+
+                            ))
+
+                        ) : (
+
+                            <h2 style={{ color: "white" }}>
+
+                                No Cars Found
+
+                            </h2>
+
+                        )
 
                     }
 
