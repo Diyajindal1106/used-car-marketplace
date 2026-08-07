@@ -1,0 +1,171 @@
+.car-card{
+
+    background:#171717;
+
+    border:1px solid #282828;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.35s;
+
+}
+
+.car-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#D4AF37;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.45);
+
+}
+
+.car-image{
+
+    position:relative;
+
+    height:220px;
+
+}
+
+.car-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.car-card:hover img{
+
+    transform:scale(1.05);
+
+}
+
+.wishlist-btn{
+
+    position:absolute;
+
+    top:15px;
+
+    right:15px;
+
+    width:42px;
+
+    height:42px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(0,0,0,.6);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}
+
+.car-content{
+
+    padding:22px;
+
+}
+
+.car-content h2{
+
+    color:white;
+
+    font-size:28px;
+
+    margin-bottom:8px;
+
+}
+
+.car-content h3{
+
+    color:#D4AF37;
+
+    font-size:30px;
+
+    margin-bottom:18px;
+
+}
+
+.car-specs{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-bottom:20px;
+
+}
+
+.car-specs span{
+
+    background:#232323;
+
+    color:#ddd;
+
+    padding:8px 15px;
+
+    border-radius:30px;
+
+    font-size:14px;
+
+}
+
+.location{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#aaa;
+
+    margin-bottom:20px;
+
+}
+
+.details-btn{
+
+    width:100%;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:#D4AF37;
+
+    color:#111;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.details-btn:hover{
+
+    background:white;
+
+}

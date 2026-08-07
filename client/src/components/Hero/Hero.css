@@ -1,0 +1,203 @@
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+}
+
+/* ================= HERO CONTENT ================= */
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateY(80px);
+    text-align: center;
+    width: 90%;
+    max-width: 900px;
+    color: #fff;
+    z-index: 2;
+
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.hero-content.show {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.tagline {
+    color: #D4AF37;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+.hero-content h1 {
+    font-size: 72px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero-content h1 span {
+    color: #D4AF37;
+}
+
+.hero-text {
+    font-size: 20px;
+    color: #ddd;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* ================= BUTTONS ================= */
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.primary-btn,
+.secondary-btn {
+    padding: 15px 34px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.primary-btn {
+    background: #D4AF37;
+    color: #111;
+}
+
+.primary-btn:hover {
+    background: white;
+    transform: translateY(-4px);
+}
+
+.secondary-btn {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.secondary-btn:hover {
+    background: white;
+    color: #111;
+    transform: translateY(-4px);
+}
+
+/* ================= SCROLL INDICATOR ================= */
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+    z-index: 2;
+    animation: fadeIn 2s ease;
+}
+
+.scroll-indicator span {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.arrow {
+    width: 20px;
+    height: 20px;
+    border-right: 3px solid #D4AF37;
+    border-bottom: 3px solid #D4AF37;
+    margin: auto;
+    transform: rotate(45deg);
+    animation: bounce 1.5s infinite;
+}
+
+/* ================= ANIMATIONS ================= */
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: rotate(45deg) translate(0, 0);
+    }
+
+    50% {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width:992px) {
+
+    .hero-content h1 {
+        font-size: 52px;
+    }
+
+    .hero-text {
+        font-size: 18px;
+    }
+}
+
+@media (max-width:768px) {
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 230px;
+    }
+}

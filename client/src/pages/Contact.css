@@ -1,0 +1,267 @@
+.contact-page{
+
+    min-height:100vh;
+
+    background:#0b0b0b;
+
+    padding:120px 7%;
+
+}
+
+.contact-container{
+
+    max-width:1400px;
+
+    margin:auto;
+
+}
+
+/* ===================== */
+
+.contact-heading{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.contact-heading h1{
+
+    color:white;
+
+    font-size:56px;
+
+    margin-bottom:15px;
+
+}
+
+.contact-heading p{
+
+    color:#a5a5a5;
+
+    font-size:18px;
+
+}
+
+/* ===================== */
+
+.contact-wrapper{
+
+    display:grid;
+
+    grid-template-columns:380px 1fr;
+
+    gap:40px;
+
+}
+
+/* ===================== */
+
+.contact-info{
+
+    background:#171717;
+
+    border:1px solid #292929;
+
+    border-radius:20px;
+
+    padding:40px;
+
+}
+
+.contact-info h2{
+
+    color:white;
+
+    margin-bottom:30px;
+
+    font-size:30px;
+
+}
+
+.info-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    color:white;
+
+    margin-bottom:25px;
+
+    font-size:16px;
+
+}
+
+.info-box svg{
+
+    color:#D4AF37;
+
+    font-size:22px;
+
+}
+
+/* ===================== */
+
+.social-icons{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:40px;
+
+}
+
+.social-icons svg{
+
+    width:45px;
+
+    height:45px;
+
+    padding:10px;
+
+    background:#202020;
+
+    color:#D4AF37;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.social-icons svg:hover{
+
+    background:#D4AF37;
+
+    color:#111;
+
+    transform:translateY(-4px);
+
+}
+
+/* ===================== */
+
+.contact-form{
+
+    background:#171717;
+
+    border:1px solid #292929;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.contact-form input,
+
+.contact-form textarea{
+
+    background:#111;
+
+    border:1px solid #333;
+
+    color:white;
+
+    padding:16px;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.contact-form input:focus,
+
+.contact-form textarea:focus{
+
+    border-color:#D4AF37;
+
+}
+
+.contact-form textarea{
+
+    resize:none;
+
+}
+
+.contact-form button{
+
+    background:#D4AF37;
+
+    color:#111;
+
+    border:none;
+
+    padding:16px;
+
+    border-radius:50px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.contact-form button:hover{
+
+    background:white;
+
+}
+
+/* ===================== */
+
+@media(max-width:992px){
+
+    .contact-wrapper{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:576px){
+
+    .contact-page{
+
+        padding:100px 20px;
+
+    }
+
+    .contact-heading h1{
+
+        font-size:40px;
+
+    }
+
+    .contact-info,
+
+    .contact-form{
+
+        padding:25px;
+
+    }
+
+}
