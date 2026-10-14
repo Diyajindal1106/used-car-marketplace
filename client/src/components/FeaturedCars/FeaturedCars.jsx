@@ -2,8 +2,8 @@ import "./FeaturedCars.css";
 import { useNavigate } from "react-router-dom";
 import hatchbackImage from "../../assets/images/hatchback.jpg";
 import sedanImage from "../../assets/images/sedan.jpg";
-import suvImage from "../../assets/images/suv.jpg";
-import mpvImage from "../../assets/images/mpv.jpg";
+import suvImage from "../../assets/images/SUV.jpg";
+import mpvImage from "../../assets/images/MPV.jpg";
 // import crossoverImage from "../../assets/images/crossover.jpg";
 // import coupeImage from "../../assets/images/coupe.jpg";
 
